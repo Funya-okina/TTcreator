@@ -13,9 +13,7 @@
 | CSV-003 | CSV | CSV列名は Googleフォーム由来の日本語列名をそのまま扱うか、取り込み前に正規化された英語列名を要求するか。 | CSV取り込み | Yes |
 | CSV-004 | CSV | CSVの文字コードは何をサポートするか。 | CSV取り込み | Yes |
 | CSV-005 | CSV | CSVの時刻表現は何をサポートするか。 | CSV取り込み | Yes |
-| ID-001 | 人物ID | 入力時点で付与される一意のIDの形式は何か。 | CSV取り込み、重複判定、DJ使用状況集計 | Yes |
-| ID-002 | 人物ID | ミニイベントと個人DJの人物IDは共通に照合できるか。 | 重複判定、DJ使用状況集計 | Yes |
-| ID-003 | 人物ID | 表示名が異なっていても同一IDなら同一人物として扱うか。 | 重複判定、DJ使用状況集計 | No |
+| ID-001 | 人物ID | 人物IDの具体的な形式は何か。 | CSV取り込み | Yes |
 | MINI-001 | ミニイベント | 同じ `mini_event_id` の行で `mini_event_name`、`preferred_time_label`、`duration_minutes` が異なる場合にどう扱うか。 | CSV取り込み | Yes |
 | MINI-002 | ミニイベント | 1つのミニイベントに同じ人物が複数行含まれる場合にどう扱うか。 | CSV取り込み、重複判定、集計 | Yes |
 | MINI-003 | ミニイベント | ミニイベント全体の `duration_minutes` と、参加DJごとの `dj_usage_minutes` 合計が一致しない場合にどう扱うか。 | CSV取り込み、集計 | Yes |

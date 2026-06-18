@@ -59,7 +59,11 @@ DJを行う人物を表す。
 * `personId`
 * `displayName`
 
-ミニイベントのDJには、入力時点で一意のIDが入ってくる。個人DJとの照合方法は未確定である。
+`personId` はDJを一意に識別するIDである。
+
+ミニイベントの参加DJとして提供されるIDと、個人DJとして提供されるIDは同じID体系を使う。同じ実在の人物を指す場合、ミニイベント用CSVの `dj_person_id` と個人DJ用CSVの `person_id` は同じ値である。
+
+重複判定とDJ使用状況集計では、表示名ではなく `personId` を同一人物判定の基準とする。
 
 ## Mini Event Request
 
