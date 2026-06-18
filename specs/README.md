@@ -29,6 +29,7 @@ TTcreator は、DJイベント主催者がミニイベントおよび個人DJの
 | タイムライン配置・検証・集計 | `scheduling.md`, `shared-rules.md`, 必要に応じて `domain-model.md` |
 | UI設計・画面操作 | `ui-workflow.md`, 関連する機能仕様 |
 | 実装計画 | `implementation-plan.md`, `shared-rules.md`, 関連する機能仕様 |
+| 実装タスク | `tasks.md`, `implementation-plan.md`, `shared-rules.md`, 関連する機能仕様 |
 | 未確定事項の確認 | `open-questions.md` |
 | 仕様全体の棚卸し | この README と全仕様ファイル |
 
@@ -44,7 +45,8 @@ TTcreator は、DJイベント主催者がミニイベントおよび個人DJの
 6. `csv-import.md`
 7. `ui-workflow.md`
 8. `implementation-plan.md`
-9. `open-questions.md`
+9. `tasks.md`
+10. `open-questions.md`
 
 ## 仕様ファイル
 
@@ -62,6 +64,8 @@ TTcreator は、DJイベント主催者がミニイベントおよび個人DJの
   * 主催者が画面上で行う主要操作と表示すべき情報。
 * `implementation-plan.md`
   * 初回実装の範囲、技術スタック、実装順序、テスト方針。
+* `tasks.md`
+  * 初回実装を1タスクずつ実装できる粒度に分解したタスクリスト。
 * `open-questions.md`
   * 未確定事項。実装時に勝手に確定せず、ユーザー確認または明示的な仮定として扱う。
 
