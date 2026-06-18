@@ -14,7 +14,7 @@
 
 ## T1: フロントエンド基盤の作成
 
-Status: pending
+Status: completed
 
 目的:
 
