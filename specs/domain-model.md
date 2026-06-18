@@ -69,14 +69,27 @@ DJを行う人物を表す。
 
 * `miniEventId`
 * `miniEventName`
-* `djPersonId`
-* `djDisplayName`
+* `participants`
 * `preferredTimeLabel`
 * `durationMinutes`
 
 所要時間は 15 分単位の可変長である。
 
-ミニイベントが複数DJを含むかは未確定である。複数DJを含む場合は、同じ `miniEventId` に複数の人物が紐づくモデルを検討する。
+ミニイベントは複数のDJを含む。1つのミニイベントは、同じ時間・同じブースに配置される1つの出演枠として扱い、その出演枠に複数の参加DJが紐づく。
+
+`participants` は、ミニイベントに参加するDJの一覧である。
+
+参加DJの主な属性:
+
+* `personId`
+* `displayName`
+* `usageMinutes`
+
+CSV取り込みでは、同じ `miniEventId` を持つ複数行を1つのミニイベントとしてまとめ、各行のDJを `participants` に追加する。
+
+`usageMinutes` は、そのミニイベント内で該当DJがブースを使用する時間を表す。`usageMinutes` は 15 分単位で管理する。
+
+ミニイベント全体の `durationMinutes` は、タイムライン上でそのミニイベント枠が占有する時間を表す。参加DJごとの `usageMinutes` は、DJ使用状況集計に用いる。
 
 ## Solo DJ Request
 
@@ -124,6 +137,8 @@ DJを行う人物を表す。
 
 配置は、ブース、開始時刻、終了時刻を持つ。
 
+`sourceType` が `miniEvent` の場合、`sourceId` は `miniEventId` を指し、そのミニイベントに含まれる全参加DJが同じ配置時間に出演しているものとして扱う。
+
 ## DJ Usage Summary
 
 特定DJのブース使用状況を表す。
@@ -138,4 +153,6 @@ DJを行う人物を表す。
 * ブース使用回数
 * ブース使用時間
 
-ブース使用時間は、配置された枠の合計時間として算出する。
+個人DJのブース使用時間は、配置された枠の合計時間として算出する。
+
+ミニイベント参加者のブース使用時間は、そのミニイベント内で参加DJごとに管理された `usageMinutes` をもとに算出する。
